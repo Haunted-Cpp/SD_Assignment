@@ -121,7 +121,9 @@ This will verify if the first ```1000``` words are the same across all seven fil
 
 This value should be less than or equal to the minimum number of words across all files. 
 
-If no differences are detected, <span style="color: green; font-weight: bold">OK!</span> will be printed; otherwise, the differences will be shown and <span style="color: red; font-weight: bold">ERROR!</span> is displayed.
+If no differences are detected, ```OK!``` will be printed; otherwise, the differences will be shown and ```ERROR!``` is displayed.
+
+
 
 Alternatively, run:
 

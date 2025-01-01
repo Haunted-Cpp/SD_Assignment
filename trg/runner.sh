@@ -16,6 +16,7 @@ SESSION_NAME="assignment_1"
 
 # Create a new tmux session
 tmux new-session -d -s "$SESSION_NAME"
+folder=$(pwd)
 
 for ((i = 0; i < $numberMachines; i++));
 do
@@ -23,13 +24,13 @@ do
   tmux new-window -t "$SESSION_NAME" -n "window_$i"
   nextIP=$((startIP + i))
   forwardingHost=$((startIP + (i + 1) % numberMachines))
-  folder=$(pwd)
+  
   tmux send-keys -t "$SESSION_NAME:$i" "clear; ssh $room$nextIP 'cd $folder; java -jar trg.jar $port $room$forwardingHost $room$calculatorIP'" C-m
 done
 
 # Launch the calculator server in a new window
 tmux new-window -t "$SESSION_NAME" -n "window_$numberMachines"
-tmux send-keys -t "$SESSION_NAME:$numberMachines" "clear; ssh $room$calculatorIP 'cd Desktop/SD_1/; java -jar calculatorServer.jar $port'" C-m
+tmux send-keys -t "$SESSION_NAME:$numberMachines" "clear; ssh $room$calculatorIP 'cd $folder; java -jar calculatorServer.jar $port'" C-m
 
 # Attach to the session
 tmux attach-session -t "$SESSION_NAME"

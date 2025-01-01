@@ -14,12 +14,13 @@ startIP="2"
 room="L80"
 network=("L803" "L802 L804 L805" "L803" "L803 L806 L807" "L805" "L805")
 
+folder=$(pwd)
+
 for ((i = 0; i < $numberMachines; i++));
 do
   # Create a new window and run the command
   tmux new-window -t "$SESSION_NAME" -n "window_$i"
   nextIP=$((startIP + i))
-  folder=$(pwd)
   tmux send-keys -t "$SESSION_NAME:$i" "clear; ssh $room$nextIP 'cd $folder; java -jar p2p.jar ${seconds} ${port} ${network[$i]}'" C-m
 done
 

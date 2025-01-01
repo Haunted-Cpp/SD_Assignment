@@ -12,7 +12,6 @@ public class PeerClientSend implements Runnable {
       try {
         double time_for_next_event = PP.timeForNextEvent();
         Thread.sleep((long) (time_for_next_event * 60 * 1000));
-        
         Peer.lock();
         int ci = Peer.incrementAndGet();
         Message msg = new Message(Peer.getHostname() + Peer.getRandomWord(RANDOM), ci, Peer.getIdentifier());

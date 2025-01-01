@@ -131,13 +131,6 @@ public class Peer {
   public static void appendMessageBroadcastQueue(Message msg) {
     lockBroadcastQueue();
     broadcast_queue.add(msg);
-    
-    int lst = -1;
-    for (Message m : broadcast_queue) {
-      assert(lst < m.getTimestamp());
-      lst = m.getTimestamp();
-    }
-    
     conditionBroadcastQueue.signal();
     unlockBroadcastQueue(); 
   }

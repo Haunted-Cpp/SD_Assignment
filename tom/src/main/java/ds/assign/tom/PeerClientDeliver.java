@@ -10,8 +10,7 @@ public class PeerClientDeliver implements Runnable  {
   public void run()   {
     try {
       // Save the output to the file L{Peer.identifier}.txt
-      // BufferedWriter writer = new BufferedWriter(new FileWriter("output/" + "L" + Peer.getIdentifier() + ".txt", true));
-      
+      BufferedWriter writer = new BufferedWriter(new FileWriter("output/" + "L" + Peer.getIdentifier() + ".txt", true));
       while (true) {
         //  Wait until being notified
         Peer.lockQueue();
@@ -21,10 +20,8 @@ public class PeerClientDeliver implements Runnable  {
         Message msg = Peer.getMessageQueue();
         assert(msg != null);
         if (!msg.getWord().equals("ack")) {
-            FileWriter writer = new FileWriter("output/" + "L" + Peer.getIdentifier() + ".txt", true);
             writer.write(msg.getWord() + '\n');
             writer.flush();
-            writer.close();
             System.out.println("--> " + msg.getWord());
         }
         Peer.decrementKey(msg.getIdentifier());

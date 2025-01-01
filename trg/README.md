@@ -111,20 +111,24 @@ bash start.sh
 
    - To gracefully end **all processes**:
 
-     ```bash
+     ``` 
      bash kill_all.sh
      ```
 
    - To gracefully end **the process** running on a specific host, use:
 
-     ```bash
+     ``` 
      bash kill_one.sh {hostname}
      ```
 
 This will create a (ring) peer network using the hosts:
 
-L802 → L803 → L804 → L805 → L806  (→ L802)
+```L802``` → ```L803``` → ```L804``` → ```L805 ```→ ```L806``` (→ ```L802```)
 
 The calculator server will be hosted on:
 
-L809
+```L809```
+
+and a start signal will be sent ```L802```.
+
+The default port being used it: ```51243```

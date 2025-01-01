@@ -53,10 +53,11 @@ This will send a kill signal to each host listed in `network` on the specified `
 
 ```
 (@ L802) java -jar p2p.jar 60 12345 L803
-(@ L803) java -jar p2p.jar 60 12345 L802
+(@ L803) java -jar p2p.jar 60 12345 L804
+(@ L804) java -jar p2p.jar 60 12345 L803
 
-@ any DCC computer with access to L802 and L803 (to start the process)
-java -jar injectStart.jar 12345 L802 L803
+@ any DCC computer with access to L802, L803, and L804 (to start the process)
+java -jar injectStart.jar 12345 L802 L803 L804
 
 @ any DCC computer with access to L802 (to kill the process running @ L802)
 java -jar injectEnd.jar 12345 L802

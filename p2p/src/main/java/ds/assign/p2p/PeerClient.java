@@ -95,7 +95,7 @@ public class PeerClient implements Runnable {
     // Add to set the received port values + update timestamp -> iterate simultaneously
     assert(valuesList.size() == timestampsList.size());
     while (portIterator.hasNext() && timestampIterator.hasNext()) {
-      String port           = portIterator.next();
+      String port        = portIterator.next();
       Long timestamp     = timestampIterator.next();
       updateKey(port, timestamp);
     }
@@ -109,8 +109,10 @@ public class PeerClient implements Runnable {
     } catch (Exception e) {
       e.printStackTrace();
     }
+    
     String forwardingHost = "";
     int size = known_peers.size() - 1; // exclude myself
+    if (size == 0) return forwardingHost;
     int position = RANDOM.nextInt(size); 
     int current_position = 0;
     for(String hostname : known_peers.keySet()) {
@@ -150,7 +152,9 @@ public class PeerClient implements Runnable {
     for (String hostname : Peer.network) updateKey(hostname, System.currentTimeMillis());
     while (true) {
       printNetwork();
-      pushAndPull(getForwardingHost());
+      String forwardingHost = getForwardingHost();
+      if (forwardingHost.equals("")) continue;
+      pushAndPull(forwardingHost);
     }
   }
 }

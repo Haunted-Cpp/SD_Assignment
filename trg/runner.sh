@@ -23,7 +23,8 @@ do
   tmux new-window -t "$SESSION_NAME" -n "window_$i"
   nextIP=$((startIP + i))
   forwardingHost=$((startIP + (i + 1) % numberMachines))
-  tmux send-keys -t "$SESSION_NAME:$i" "clear; ssh $room$nextIP 'cd Desktop/SD_1/; java -jar trg.jar $port $room$forwardingHost $room$calculatorIP'" C-m
+  folder=$(pwd)
+  tmux send-keys -t "$SESSION_NAME:$i" "clear; ssh $room$nextIP 'cd $folder; java -jar trg.jar $port $room$forwardingHost $room$calculatorIP'" C-m
 done
 
 # Launch the calculator server in a new window

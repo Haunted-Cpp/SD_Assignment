@@ -57,7 +57,7 @@ public class PeerClient implements Runnable {
       calculator.shutdownChannel();
       System.out.println(String.format("---> %3d requests done -----\n", requests));
       try {
-        Thread.sleep(750);
+        Thread.sleep(500);
         MessageRequest reply = blockingStub.sendStartToken(request);
       } catch (Exception e1) {
         System.out.println("Receiver seems to be offline ... shutting down!");

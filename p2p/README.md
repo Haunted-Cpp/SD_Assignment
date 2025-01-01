@@ -82,7 +82,7 @@ bash runner.sh
 bash start.sh
 ```
 
-3. To terminate the process, use one of the following commands:
+3. To terminate the process, use one of the following scripts:
 
    - To gracefully end **all processes**:
 
@@ -113,4 +113,4 @@ This will create the following p2p network (similar to the example), given in an
 
 and a start signal will be sent to all the hosts.
 
-The default port being used it: ```51243```
+The default port being used is: ```51243```

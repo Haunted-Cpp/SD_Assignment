@@ -1,7 +1,7 @@
 # Distributed Systems Practical Assignment
 ## Duarte Nóbrega, January 2025 
 
-This repository contains the code, scripts and files created to implement the selected algorithms.
+This repository contains the code, scripts, and files created to implement the selected algorithms for the practical assignment.
 
 #### 1. Mutual Exclusion with the Token Ring Algorithm
 
@@ -15,6 +15,8 @@ Contents inside the folder: ```p2p```
 
 Contents inside the folder: ```tom```
 
-#### Build and Run
+---
 
-Inside each folder there is a README.md with compilation instructions.
+### Build and Run
+
+Inside each folder, there is a ```README.md``` file with detailed compilation and execution instructions.

@@ -120,3 +120,11 @@ bash start.sh
      ```bash
      bash kill_one.sh {hostname}
      ```
+
+This will create a (ring) peer network using the hosts:
+
+L802 → L803 → L804 → L805 → L806  (→ L802)
+
+The calculator server will be hosted on:
+
+L809

@@ -26,7 +26,6 @@ public class CalculatorServer {
       @Override
       public void run() {
         try {
-          System.out.println("This is not working!!!");
           CalculatorServer.this.stop();
         } catch (InterruptedException e) {
           e.printStackTrace(System.err);

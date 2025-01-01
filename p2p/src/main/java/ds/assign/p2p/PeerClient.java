@@ -75,12 +75,12 @@ public class PeerClient implements Runnable {
   private static void removeOld() {
     updateKey(Peer.getHostname(), System.currentTimeMillis()); // update own timestamp
     Long current_time = System.currentTimeMillis();
-    known_peers.entrySet().removeIf(entry -> entry.getValue() < current_time - timeout * 1000);
+    known_peers.entrySet().removeIf(entry -> entry.getValue() < current_time - timeout * 1000L);
   }
   
   // get all the keys and values
   public static Pair get_network_info() {
-    List<String>    keys = new ArrayList<>();
+    List<String> keys = new ArrayList<>();
     List<Long> values = new ArrayList<>();
     for(ConcurrentSkipListMap.Entry<String, Long> entry : known_peers.entrySet()) {
       keys.add(entry.getKey());

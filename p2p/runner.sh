@@ -19,7 +19,8 @@ do
   # Create a new window and run the command
   tmux new-window -t "$SESSION_NAME" -n "window_$i"
   nextIP=$((startIP + i))
-  tmux send-keys -t "$SESSION_NAME:$i" "clear; ssh $room$nextIP 'cd Desktop/SD_2/; java -jar p2p.jar ${seconds} ${port} ${network[$i]}'" C-m
+  folder=$(pwd)
+  tmux send-keys -t "$SESSION_NAME:$i" "clear; ssh $room$nextIP 'cd $folder; java -jar p2p.jar ${seconds} ${port} ${network[$i]}'" C-m
 done
 
 # Attach to the session

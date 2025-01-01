@@ -107,6 +107,8 @@ bash start.sh
      ``` 
      bash kill_one.sh {hostname}
      ```
+     
+### Example Peer Network
 
 This will create the following p2p network (similar to the example), given in an adjacency list format:
 

@@ -75,7 +75,7 @@ public class PeerClient implements Runnable {
   private static void removeOld() {
     updateKey(Peer.getHostname(), System.currentTimeMillis()); // update own timestamp
     Long current_time = System.currentTimeMillis();
-    known_peers.entrySet().removeIf(entry -> entry.getValue() < current_time - timeout);
+    known_peers.entrySet().removeIf(entry -> entry.getValue() < current_time - timeout * 1000);
   }
   
   // get all the keys and values

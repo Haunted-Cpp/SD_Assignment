@@ -51,7 +51,7 @@ task run_peer(type: JavaExec) {
 task fatJar(type: Jar) {
 
     manifest {
-        attributes 'Main-Class': "ds.assign.p2p.Peer"
+        attributes 'Main-Class': "ds.assign.p2p.Peer" // Change here the main target class if needed
     }
 
     archiveBaseName = "${rootProject.name}"

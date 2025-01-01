@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "ds.assign.trg";
+
+service Calculator {
+  rpc add (CalculatorRequest) returns (CalculatorReply) {}
+  rpc sub (CalculatorRequest) returns (CalculatorReply) {}
+  rpc mul (CalculatorRequest) returns (CalculatorReply) {}
+  rpc div (CalculatorRequest) returns (CalculatorReply) {}
+}
+
+service StartService {
+  rpc SendStartToken (StartRequest) returns (MessageRequest) {}
+}
+
+service EndService {
+  rpc SendEndToken (StartRequest) returns (MessageRequest) {}
+}
+
+// Signals the start of the process
+message StartRequest {
+  bool start = 1;
+}
+
+// The request message containing the operands
+message CalculatorRequest {
+  double value1 = 1;
+  double value2 = 2;  
+}
+
+// The reply message containing the result
+message CalculatorReply {
+  double value = 1;
+}
+
+// Message that contains the ACK
+message MessageRequest {
+  string msg = 1;  
+}
+

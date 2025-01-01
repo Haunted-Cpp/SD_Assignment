@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "ds.assign.p2p";
+
+service Message {
+  rpc sendToken(MessageRequest) returns (MessageRequest) {}
+}
+
+service StartService {
+  rpc SendStartToken (StartRequest) returns (MessageRequest) {}
+}
+
+service EndService {
+  rpc SendEndToken (StartRequest) returns (MessageRequest) {}
+}
+
+message MessageRequest {
+  repeated string values = 1;
+  repeated int64 timestamps = 2;
+}
+
+message StartRequest {
+  bool start = 1;
+}
+
+

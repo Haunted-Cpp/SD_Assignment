@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "ds.assign.tom";
+
+service Message {
+  rpc sendMsg(MessageRequest) returns (MessageRequest) {}
+}
+
+service StartService {
+  rpc SendStartToken (StartRequest) returns (MessageRequest) {}
+}
+
+service EndService {
+  rpc SendEndToken (StartRequest) returns (MessageRequest) {}
+}
+
+message MessageRequest {
+  string word = 1;
+  int32 timestamp = 2;
+  int32 identifier = 3;
+}
+
+message StartRequest {
+  bool start = 1;
+}

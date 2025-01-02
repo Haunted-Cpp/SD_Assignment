@@ -131,4 +131,6 @@ The default port being used is: `51243`
 
 ### Disclaimers
 
-- The scripts must be executed from the folder in which they are located.  
+- The scripts must be executed from the folder in which they are located.
+
+- Note that the scripts create and launch a tmux session.

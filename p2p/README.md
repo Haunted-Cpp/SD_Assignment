@@ -128,3 +128,7 @@ This will create the following p2p network (similar to the example), given in an
 and a start signal will be sent to all the hosts.
 
 The default port being used is: `51243`
+
+### Disclaimers
+
+- The scripts must be executed from the folder in which they are located.  

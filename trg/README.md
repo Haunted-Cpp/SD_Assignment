@@ -148,3 +148,7 @@ The calculator server will be hosted on:
 The start signal will be sent to `L802`.
 
 The default port being used is: `51243`
+
+### Disclaimers
+
+- The scripts must be executed from the folder in which they are located.  

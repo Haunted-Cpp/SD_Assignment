@@ -1,29 +1,35 @@
 #!/bin/bash
 
+#Script variables
+
+#-----------------------------------------------------------------------------------
+
+numberMachines=6 # Number of machines the network has
+port=51243       # Port where the service will be hosted
+startIP="2"      # The PC hosting the first peer - L802 
+                 # In this case, the PCs "L802 L803 L804 L805 L806 L807" are used
+room="L80"       # DCC room where the processes will be hosted
+folder=$(pwd)    # Folder where the files are contained
+
+# Build the `network` parameter (contains all the hostnames)
+network=""
+for ((i = 0; i < $numberMachines; i++));
+do
+  nextIP=$((startIP + i))
+  network="$network $room$nextIP"
+done
+
+#-----------------------------------------------------------------------------------
+
 # Name of the tmux session
 SESSION_NAME="assignment_3"
 
 # Create a new tmux session (detached)
 tmux new-session -d -s "$SESSION_NAME"
 
-numberMachines=6
-
-port=51243
-startIP="2"
-room="L80"
-
-network="$room$startIP"
-
-for ((i = 1; i < $numberMachines; i++));
-do
-  nextIP=$((startIP + i))
-  network="$network $room$nextIP"
-done
-
+# Remove old files
 rm -rf output/L*.txt
 rm -rf output/L*.comp
-
-folder=$(pwd)
 
 for ((i = 0; i < $numberMachines; i++));
 do

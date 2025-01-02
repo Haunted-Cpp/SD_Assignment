@@ -10,7 +10,7 @@ public class PeerClientDeliver implements Runnable  {
   public void run()   {
     try {
       // Save the output to the file L{Peer.identifier}.txt
-      BufferedWriter writer = new BufferedWriter(new FileWriter("output/" + "L" + Peer.getIdentifier() + ".txt", true));
+      BufferedWriter writer = new BufferedWriter(new FileWriter("output/" + "L" + Peer.getIdentifier() + ".txt"));
       while (true) {
         //  Wait until being notified
         Peer.lockQueue();

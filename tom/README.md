@@ -134,3 +134,5 @@ This will automatically call `verify.sh` with the maximum number of words possib
 - The scripts must be executed from the folder in which they are located.  
 
 - The `dict.txt` file was extracted from the following source: [GitHub - Shreda/pentestTools: random-words.txt](https://github.com/Shreda/pentestTools/blob/master/random-words.txt)
+
+- Note that the scripts create and launch a tmux session.

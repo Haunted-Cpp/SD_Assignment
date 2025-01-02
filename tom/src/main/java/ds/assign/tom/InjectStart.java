@@ -21,7 +21,7 @@ public class InjectStart {
       blockingStub.sendStartToken(request);
       System.out.println("Host " + host + " @ " + port + " is now online");
     } catch (Exception e) {
-      System.out.println("Host " + host + " seems to be offline");
+      System.out.println("Host " + host + " @ " + port + " seems to be offline");
     }
     channel.shutdown();
   }

@@ -44,14 +44,13 @@ This will send a kill signal to each host listed in `network` on the specified `
 #### Example
 
 ```
-@ L802
-java -jar tom.jar 12345 L802 L803 L804
-@ L803
-java -jar tom.jar 12345 L802 L803 L804
-@ L804
-java -jar tom.jar 12345 L802 L803 L804
+(@ L802) java -jar tom.jar 12345 L802 L803 L804
+(@ L803) java -jar tom.jar 12345 L802 L803 L804
+(@ L804) java -jar tom.jar 12345 L802 L803 L804
+
 @ any DCC computer with access to L802, L803 and L804 (to start the process)
 java -jar injectStart.jar 12345 L802 L803 L804
+
 @ any DCC computer with access to L802, L803 and L804 (to stop the process)
 java -jar injectEnd.jar 12345 L802 L803 L804
 ```

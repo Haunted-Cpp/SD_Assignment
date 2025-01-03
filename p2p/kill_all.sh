@@ -1,5 +1,16 @@
 #!/bin/bash
 
+# Sends a kill signal to:
+
+# L802
+# L803
+# L804
+# L805
+# L806
+# L807 
+
+# And kills the associated tmux panels 
+
 numberMachines=6
 
 port=51243

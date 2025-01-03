@@ -1,3 +1,15 @@
+# Checks if the output files:
+
+# L802.txt 
+# L803.txt 
+# L804.txt 
+# L805.txt
+# L806.txt 
+# L807.txt
+
+# Are equal up to the first `$1` lines - that is, the value given as argument
+# Make sure: $1 <= min { cat L80i.txt | wc -l }, for 2 <= i <= 7. 
+
 if test "$#" -ne 1; then
   echo "Invalid number of arguments"
   echo "Usage: \`number of lines to compare\`"

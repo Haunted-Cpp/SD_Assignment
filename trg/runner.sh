@@ -22,7 +22,7 @@ tmux new-session -d -s "$SESSION_NAME"
 
 for ((i = 0; i < $numberMachines; i++));
 do
-  Create a new window and run the command
+  # Create a new window and run the command
   tmux new-window -t "$SESSION_NAME" -n "window_$i"
   nextIP=$((startIP + i))
   forwardingHost=$((startIP + (i + 1) % numberMachines))

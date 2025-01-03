@@ -34,7 +34,7 @@ public class PeerClient implements Runnable {
   private static ConcurrentSkipListMap<String, Long> known_peers = new ConcurrentSkipListMap<>();  
   
   private static final Random RANDOM = new Random(System.nanoTime());
-  private static final double LAMBDA = 6; // 6 requests per minute - on average
+  private static final double LAMBDA = 2; // 2 requests per minute - on average
   
   private MessageGrpc.MessageBlockingStub blockingStub;
   private MessageRequest request;
@@ -65,7 +65,7 @@ public class PeerClient implements Runnable {
   }
   
   public static void updateKey(String key, Long value) {
-    // known_peers.put(Peer.getHostname(), ++timestamp); // update my own timestamp
+    updateKey(Peer.getHostname(), System.currentTimeMillis()); // update own timestamp
     Long old_value = known_peers.putIfAbsent(key, value);
     if (old_value != null) { // key already exists -> keep the maximum
       known_peers.put(key, Math.max(old_value, value));

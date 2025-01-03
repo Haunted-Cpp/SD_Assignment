@@ -34,7 +34,7 @@ public class PeerClient implements Runnable {
   private static ConcurrentSkipListMap<String, Long> known_peers = new ConcurrentSkipListMap<>();  
   
   private static final Random RANDOM = new Random(System.nanoTime());
-  private static final double LAMBDA = 2; // 2 requests per minute - on average
+  private static final double LAMBDA = 6; // 6 requests per minute - on average
   
   private MessageGrpc.MessageBlockingStub blockingStub;
   private MessageRequest request;

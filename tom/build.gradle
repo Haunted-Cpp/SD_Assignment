@@ -60,7 +60,7 @@ task run_end(type: JavaExec) {
 task fatJar(type: Jar) {
 
     manifest {
-        attributes 'Main-Class': "ds.assign.tom.Peer"
+        attributes 'Main-Class': "ds.assign.tom.Peer" // Change here the main target class if needed
     }
 
     archiveBaseName = "${rootProject.name}"

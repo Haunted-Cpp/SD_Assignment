@@ -1,7 +1,5 @@
 package ds.assign.p2p;
 
-// import ds.assign.p2p.PeerClient;
-
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import io.grpc.stub.StreamObserver;

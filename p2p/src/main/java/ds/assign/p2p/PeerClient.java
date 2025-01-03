@@ -65,7 +65,6 @@ public class PeerClient implements Runnable {
   }
   
   public static void updateKey(String key, Long value) {
-    updateKey(Peer.getHostname(), System.currentTimeMillis()); // update own timestamp
     Long old_value = known_peers.putIfAbsent(key, value);
     if (old_value != null) { // key already exists -> keep the maximum
       known_peers.put(key, Math.max(old_value, value));

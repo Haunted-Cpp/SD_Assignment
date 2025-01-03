@@ -9,7 +9,7 @@ public class Peer {
   private static String hostname;
   public static List<String> network = new ArrayList<>();
   public static void main(String[] args) {
-    // Make sure two arguments are given
+    // Make sure three arguments are given
     if (args.length < 3) { 
       System.out.println("*** Usage: `timeout` `port` `known hosts` ***");
       return;

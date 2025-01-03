@@ -1,5 +1,14 @@
 #!/bin/bash
 
+# Sends a start signal to:
+
+# L802 @ 51243
+# L803 @ 51243
+# L804 @ 51243
+# L805 @ 51243
+# L806 @ 51243
+# L807 @ 51243
+
 numberMachines=6
 
 port=51243

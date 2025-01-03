@@ -1,5 +1,16 @@
 #!/bin/bash
 
+# Sends a kill signal to:
+
+# L802
+# L803
+# L804
+# L805
+# L806
+# L807 
+
+# And kills the associated tmux panels 
+
 numberMachines=6
 
 port=51243
@@ -19,9 +30,4 @@ java -jar injectEnd.jar $port $network
 for ((i = 0; i < $numberMachines; i++));
 do
   tmux kill-pane -t assignment_3:$i
-  # Create a new window and run the command
-  # tmux new-window -t "$SESSION_NAME" -n "window_$i"
-  # nextIP=$((startIP + i))
-  # tmux send-keys -t "$SESSION_NAME:$i" "clear; ssh $room$nextIP 'cd Desktop/SD_testar/; java -jar tom.jar $port $network'" C-m
-  # tmux send-keys -t "$SESSION_NAME:$i" "clear; ssh $room$nextIP 'cd Desktop/SD_testar/; java -jar tom.jar $port $network > $room$nextIP.txt'" C-m
 done

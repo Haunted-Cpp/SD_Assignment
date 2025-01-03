@@ -8,9 +8,7 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;  
 
 public class Peer {
-  
-  // public static AtomicInteger count = new AtomicInteger(0);
-  
+ 
   private static ReentrantLock lock = new ReentrantLock();
   private static Condition condition = lock.newCondition();
   private static int hasToken = 0;

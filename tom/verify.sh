@@ -17,7 +17,7 @@ if test "$#" -ne 1; then
 fi
 
 numberMachines=6
-startIP="2"
+startIP="1"
 room="L120"
 
 for ((i = 0; i < $numberMachines; i++)); 

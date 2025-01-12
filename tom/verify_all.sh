@@ -10,7 +10,7 @@
 # Are equal up to the maximum number of lines possible - min { cat L80i.txt | wc -l }
 
 numberMachines=6
-startIP="2"
+startIP="1"
 room="L120"
 
 number_of_lines=-1

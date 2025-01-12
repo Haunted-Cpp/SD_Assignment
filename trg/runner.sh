@@ -7,9 +7,9 @@
 numberMachines=5  # Number of machines the ring has
 port=51243        # Port where the service will be hosted
 room="L120"        # DCC room where the processes will be hosted
-startIP="2"       # The PC hosting the first peer - L802 
+startIP="1"       # The PC hosting the first peer - L802 
                   # In this case, the PCs "L802 L803 L804 L805 L806" are used
-calculatorIP="9"  # The PC hosting the Calculator Server - L809
+calculatorIP="7"  # The PC hosting the Calculator Server - L809
 folder=$(pwd)     # Folder where the files are contained
 
 #-----------------------------------------------------------------------------------

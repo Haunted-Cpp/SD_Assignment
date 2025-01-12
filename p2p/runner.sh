@@ -8,7 +8,7 @@ numberMachines=6 # Number of machines the p2p network has
 port=51243       # Port where the service will be hosted
 seconds=60       # Timeout parameter
 room="L120"       # DCC room where the processes will be hosted
-startIP="2"      # The PC hosting the first peer - L802 
+startIP="1"      # The PC hosting the first peer - L802 
                  # In this case, the PCs "L802 L803 L804 L805 L806 L807" are used
 folder=$(pwd)    # Folder where the files are contained
 

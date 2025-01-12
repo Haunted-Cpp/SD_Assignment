@@ -12,7 +12,7 @@
 numberMachines=6
 
 port=51243
-startIP="2"
+startIP="1"
 room="L120"
 
 network="$room$startIP"

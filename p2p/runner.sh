@@ -7,13 +7,13 @@
 numberMachines=6 # Number of machines the p2p network has
 port=51243       # Port where the service will be hosted
 seconds=60       # Timeout parameter
-room="L80"       # DCC room where the processes will be hosted
+room="L120"       # DCC room where the processes will be hosted
 startIP="2"      # The PC hosting the first peer - L802 
                  # In this case, the PCs "L802 L803 L804 L805 L806 L807" are used
 folder=$(pwd)    # Folder where the files are contained
 
 # Build the `network` parameter 
-network=("L803" "L802 L804 L805" "L803" "L803 L806 L807" "L805" "L805")
+network=("${room}3" "${room}2 ${room}4 ${room}5" "${room}3" "${room}3 ${room}6 ${room}7" "${room}5" "${room}5")
 
 # It encodes the following graph (adjacency list format)
 #L802: L803 

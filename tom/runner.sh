@@ -8,7 +8,7 @@ numberMachines=6 # Number of machines the network has
 port=51243       # Port where the service will be hosted
 startIP="2"      # The PC hosting the first peer - L802 
                  # In this case, the PCs "L802 L803 L804 L805 L806 L807" are used
-room="L80"       # DCC room where the processes will be hosted
+room="L120"       # DCC room where the processes will be hosted
 folder=$(pwd)    # Folder where the files are contained
 
 # Build the `network` parameter (contains all the hostnames)

@@ -18,7 +18,7 @@ fi
 
 numberMachines=6
 startIP="2"
-room="L80"
+room="L120"
 
 for ((i = 0; i < $numberMachines; i++)); 
 do 

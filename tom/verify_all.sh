@@ -11,7 +11,7 @@
 
 numberMachines=6
 startIP="2"
-room="L80"
+room="L120"
 
 number_of_lines=-1
 

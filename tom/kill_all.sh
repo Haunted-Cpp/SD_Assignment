@@ -13,6 +13,9 @@
 
 # And kills the associated tmux panels 
 
+# Name of the tmux session
+SESSION_NAME="tom"
+
 numberMachines=7
 
 port=51243
@@ -37,5 +40,5 @@ do
   if [ "$i" -eq "1" ]; then
       continue
   fi
-  tmux kill-pane -t "assignment_3:window_$i"
+  tmux kill-pane -t "$SESSION_NAME:window_$i"
 done

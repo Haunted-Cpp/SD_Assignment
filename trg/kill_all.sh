@@ -11,6 +11,9 @@
 
 # And kills the associated tmux panels 
 
+# Name of the tmux session
+SESSION_NAME="trg"
+
 numberMachines=7
 
 port=51243
@@ -32,5 +35,5 @@ java -jar injectEnd.jar $port $network
 
 for ((i = 0; i < $((numberMachines - 1)); i++));
 do
-  tmux kill-pane -t "assignment_1:window_$i"
+  tmux kill-pane -t "$SESSION_NAME:window_$i"
 done

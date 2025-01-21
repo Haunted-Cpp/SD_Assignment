@@ -30,7 +30,7 @@ SESSION_NAME="assignment_2"
 
 
 # Create a new tmux session (detached)
-tmux new-session -d -s "$SESSION_NAME"
+tmux new-session -d -s "$SESSION_NAME" -n "start"
 
 index=0
 for ((i = 0; i < $numberMachines; i++));
@@ -47,3 +47,5 @@ done
 
 # Attach to the session
 tmux attach-session -t "$SESSION_NAME"
+
+tmux select-window -t "$SESSION_NAME:start"

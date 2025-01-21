@@ -2,23 +2,26 @@
 
 # Sends a start signal to:
 
-# L802 @ 51243
-# L803 @ 51243
-# L804 @ 51243
-# L805 @ 51243
-# L806 @ 51243
-# L807 @ 51243
+# L1201 @ 51243
+# L1203 @ 51243
+# L1204 @ 51243
+# L1205 @ 51243
+# L1206 @ 51243
+# L1207 @ 51243
 
-numberMachines=6
+numberMachines=7
 
 port=51243
-startIP="2"
+startIP="1"
 room="L120"
 
 network="$room$startIP"
 
 for ((i = 1; i < $numberMachines; i++));
 do
+  if [ "$i" -eq "1" ]; then
+      continue
+  fi
   nextIP=$((startIP + i))
   network="$network $room$nextIP"
 done

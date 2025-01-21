@@ -41,7 +41,7 @@ do
   # Create a new window and run the command
   tmux new-window -t "$SESSION_NAME" -n "window_$i"
   nextIP=$((startIP + i))
-  tmux send-keys -t "$SESSION_NAME:$i" "clear; ssh $room$nextIP 'cd $folder; java -jar p2p.jar ${seconds} ${port} ${network[$i]}'" C-m
+  tmux send-keys -t "$SESSION_NAME:$i" "clear; ssh $room$nextIP 'cd $folder; java -jar p2p.jar ${seconds} ${port} ${network[$index]}'" C-m
   index=$((index + 1))
 done
 

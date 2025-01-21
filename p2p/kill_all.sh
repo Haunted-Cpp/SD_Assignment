@@ -2,7 +2,7 @@
 
 # Sends a kill signal to:
 
-# L1201
+# L1201 -- Calculator Server
 # L1203
 # L1204
 # L1205

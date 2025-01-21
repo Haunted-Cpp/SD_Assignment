@@ -28,8 +28,11 @@ network=("${room}3" "${room}1 ${room}4 ${room}5" "${room}3" "${room}3 ${room}6 $
 # Name of the tmux session
 SESSION_NAME="assignment_2"
 
+
 # Create a new tmux session (detached)
 tmux new-session -d -s "$SESSION_NAME"
+
+index=0
 for ((i = 0; i < $numberMachines; i++));
 do
   if [ "$i" -eq "1" ]; then
@@ -38,6 +41,8 @@ do
   # Create a new window and run the command
   tmux new-window -t "$SESSION_NAME" -n "window_$i"
   nextIP=$((startIP + i))
+  echo "$SESSION_NAME:$i" "clear; ssh $room$nextIP 'cd $folder; java -jar p2p.jar ${seconds} ${port} ${network[$index]}'"
+  index=$((index + 1))
   tmux send-keys -t "$SESSION_NAME:$i" "clear; ssh $room$nextIP 'cd $folder; java -jar p2p.jar ${seconds} ${port} ${network[$i]}'" C-m
 done
 

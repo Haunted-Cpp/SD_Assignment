@@ -35,5 +35,5 @@ do
   if [ "$i" -eq "1" ]; then
       continue
   fi
-  tmux kill-pane -t assignment_1:$i
+  tmux kill-pane -t "assignment_1:window_$i"
 done

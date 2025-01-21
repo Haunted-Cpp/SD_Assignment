@@ -18,7 +18,7 @@ folder=$(pwd)      # Folder where the files are contained
 SESSION_NAME="assignment_1"
 
 # Create a new tmux session
-tmux new-session -d -s "$SESSION_NAME"
+tmux new-session -d -s "$SESSION_NAME" -n "start"
 
 for ((i = 0; i < $numberMachines; i++));
 do
@@ -26,12 +26,14 @@ do
   tmux new-window -t "$SESSION_NAME" -n "window_$i"
   nextIP=$((startIP + i))
   forwardingHost=$((startIP + (i + 1) % numberMachines))
-  tmux send-keys -t "$SESSION_NAME:$i" "clear; ssh ${room}$nextIP 'cd $folder; java -jar trg.jar $port ${room}$forwardingHost $room$calculatorIP'" C-m
+  tmux send-keys -t "$SESSION_NAME:window_$i" "clear; ssh ${room}$nextIP 'cd $folder; java -jar trg.jar $port ${room}$forwardingHost $room$calculatorIP'" C-m
 done
 
 # Launch the calculator server in a new window
 tmux new-window -t "$SESSION_NAME" -n "window_$numberMachines"
-tmux send-keys -t "$SESSION_NAME:$numberMachines" "clear; ssh $room$calculatorIP 'cd $folder; java -jar calculatorServer.jar $port'" C-m
+tmux send-keys -t "$SESSION_NAME:window_$numberMachines" "clear; ssh $room$calculatorIP 'cd $folder; java -jar calculatorServer.jar $port'" C-m
+
+tmux select-window -t "$SESSION_NAME:start"
 
 # Attach to the session
 tmux attach-session -t "$SESSION_NAME"

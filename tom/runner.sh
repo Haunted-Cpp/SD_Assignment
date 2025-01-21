@@ -28,7 +28,7 @@ done
 SESSION_NAME="assignment_3"
 
 # Create a new tmux session (detached)
-tmux new-session -d -s "$SESSION_NAME"
+tmux new-session -d -s "$SESSION_NAME" -n "start"
 
 # Remove old files
 rm -rf output/L*.txt
@@ -42,8 +42,10 @@ do
   nextIP=$((startIP + i))
   # Create a new window and run the command
   tmux new-window -t "$SESSION_NAME" -n "window_$i"
-  tmux send-keys -t "$SESSION_NAME:$i" "clear; ssh $room$nextIP 'cd $folder; java -jar tom.jar $port $network'" C-m
+  tmux send-keys -t "$SESSION_NAME:window_$i" "clear; ssh $room$nextIP 'cd $folder; java -jar tom.jar $port $network'" C-m
 done
+
+tmux select-window -t "$SESSION_NAME:start"
 
 # Attach to the session
 tmux attach-session -t "$SESSION_NAME"

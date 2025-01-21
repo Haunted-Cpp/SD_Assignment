@@ -30,10 +30,7 @@ done
 
 java -jar injectEnd.jar $port $network 
 
-for ((i = 0; i < $((numberMachines)); i++));
+for ((i = 0; i < $((numberMachines - 1)); i++));
 do
-  if [ "$i" -eq "1" ]; then
-      continue
-  fi
   tmux kill-pane -t "assignment_1:window_$i"
 done

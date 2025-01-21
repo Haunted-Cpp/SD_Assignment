@@ -25,7 +25,7 @@ done
 #-----------------------------------------------------------------------------------
 
 # Name of the tmux session
-SESSION_NAME="assignment_3"
+SESSION_NAME="tom"
 
 # Create a new tmux session (detached)
 tmux new-session -d -s "$SESSION_NAME" -n "start"

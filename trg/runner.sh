@@ -15,7 +15,7 @@ folder=$(pwd)      # Folder where the files are contained
 #-----------------------------------------------------------------------------------
 
 # Name of the tmux session
-SESSION_NAME="assignment_1"
+SESSION_NAME="trg"
 
 # Create a new tmux session
 tmux new-session -d -s "$SESSION_NAME" -n "start"

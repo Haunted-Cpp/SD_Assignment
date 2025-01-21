@@ -26,7 +26,7 @@ network=("${room}3" "${room}1 ${room}4 ${room}5" "${room}3" "${room}3 ${room}6 $
 #-----------------------------------------------------------------------------------
 
 # Name of the tmux session
-SESSION_NAME="assignment_2"
+SESSION_NAME="p2p"
 
 
 # Create a new tmux session (detached)

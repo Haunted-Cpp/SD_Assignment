@@ -45,7 +45,9 @@ do
   index=$((index + 1))
 done
 
+tmux select-window -t "$SESSION_NAME:start"
+
 # Attach to the session
 tmux attach-session -t "$SESSION_NAME"
 
-tmux select-window -t "$SESSION_NAME:start"
+

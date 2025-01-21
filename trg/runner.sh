@@ -22,6 +22,9 @@ tmux new-session -d -s "$SESSION_NAME"
 
 for ((i = 0; i < $numberMachines; i++));
 do
+  if [ "$i" -eq "1" ]; then
+      continue
+  fi
   # Create a new window and run the command
   tmux new-window -t "$SESSION_NAME" -n "window_$i"
   nextIP=$((startIP + i))

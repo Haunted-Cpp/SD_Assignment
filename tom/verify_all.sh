@@ -1,13 +1,13 @@
 # Checks if the output files:
 
-# L802.txt 
-# L803.txt 
-# L804.txt 
-# L805.txt
-# L806.txt 
-# L807.txt
+# L1201.txt 
+# L1203.txt 
+# L1204.txt 
+# L1205.txt
+# L1206.txt 
+# L1207.txt
 
-# Are equal up to the maximum number of lines possible - min { cat L80i.txt | wc -l }
+# Are equal up to the maximum number of lines possible - min { cat L120i.txt | wc -l }
 
 numberMachines=7
 startIP="1"

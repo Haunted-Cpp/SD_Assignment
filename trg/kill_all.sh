@@ -2,36 +2,38 @@
 
 # Sends a kill signal to:
 
+# L1201
 # L1203
 # L1204
 # L1205
 # L1206
-# L1207
-# L1210 (calculatorServer)
+# L1207 (calculatorServer)
 
 # And kills the associated tmux panels 
 
-numberMachines=5
+numberMachines=7
 
 port=51243
-startIP="3"
-calculatorIP="10"
-room="L12"
+startIP="1"
+room="L120"
 
-network="${room}0$startIP"
+network="${room}$startIP"
 
 for ((i = 1; i < $numberMachines; i++));
 do
+  if [ "$i" -eq "1" ]; then
+      continue
+  fi
   nextIP=$((startIP + i))
-  network="$network ${room}0$nextIP"
+  network="$network ${room}$nextIP"
 done
-
-network="$network $room$calculatorIP"
- 
 
 java -jar injectEnd.jar $port $network 
 
-for ((i = 0; i < $((numberMachines + 1)); i++));
+for ((i = 0; i < $((numberMachines)); i++));
 do
+  if [ "$i" -eq "1" ]; then
+      continue
+  fi
   tmux kill-pane -t assignment_1:$i
 done

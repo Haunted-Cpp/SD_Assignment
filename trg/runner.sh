@@ -4,12 +4,12 @@
 
 #-----------------------------------------------------------------------------------
 
-numberMachines=6   # Number of machines the ring has (+1 because L1202 is offline ...)
+numberMachines=5   # Number of machines the ring has (+1 because L1202 is offline ...)
 port=51243         # Port where the service will be hosted
 room="L120"         # DCC room where the processes will be hosted
-startIP="1"        # The PC hosting the first peer - L802 
+startIP="3"        # The PC hosting the first peer - L802 
                    # In this case, the PCs "L802 L803 L804 L805 L806" are used
-calculatorIP="7"  # The PC hosting the Calculator Server - L809
+calculatorIP="1"  # The PC hosting the Calculator Server - L809
 folder=$(pwd)      # Folder where the files are contained
 
 #-----------------------------------------------------------------------------------
@@ -22,9 +22,6 @@ tmux new-session -d -s "$SESSION_NAME"
 
 for ((i = 0; i < $numberMachines; i++));
 do
-  if [ "$i" -eq "1" ]; then
-      continue
-  fi
   # Create a new window and run the command
   tmux new-window -t "$SESSION_NAME" -n "window_$i"
   nextIP=$((startIP + i))

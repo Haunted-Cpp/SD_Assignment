@@ -2,12 +2,12 @@
 
 # Sends a kill signal to:
 
-# L1201
+# L1201 (calculatorServer)
 # L1203
 # L1204
 # L1205
 # L1206
-# L1207 (calculatorServer)
+# L1207 
 
 # And kills the associated tmux panels 
 
